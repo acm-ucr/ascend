@@ -7,12 +7,13 @@ const Cards = () => {
       {Board.map(({ title, members }, index) => (
         <div
           key={index}
-          className="flex flex-col items-center justify-center gap-30"
+          className="flex flex-col items-center justify-center gap-10 px-4 sm:gap-16"
         >
-          <p className="text-ascend-red-orange font-playfair mt-15 text-3xl font-bold underline underline-offset-5">
+          <p className="font-playfair text-ascend-red-orange mt-10 text-2xl font-bold underline underline-offset-4 sm:text-3xl md:text-4xl">
             {title}
           </p>
-          <div className="grid grid-cols-2 items-center justify-center gap-25">
+
+          <div className="grid w-full max-w-5xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-25">
             {members.map(
               ({ profilePic, name, position, majorYear, linkedin }, index) => (
                 <div key={index} className="font-nunito">
