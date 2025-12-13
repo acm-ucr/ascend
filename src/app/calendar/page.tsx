@@ -1,5 +1,7 @@
+import CalendarCall from "@/components/calendar/calendarcall";
+
 const Calendar = () => {
-  return <p>upcoming events</p>;
+  return <CalendarCall />;
 };
 
 export default Calendar;
