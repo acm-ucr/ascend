@@ -1,4 +1,4 @@
-interface eventCardProps {
+export interface EventCardProps {
   title: string;
   date: string;
   time: string;
@@ -12,19 +12,21 @@ const EventCard = ({
   time,
   location,
   description,
-}: eventCardProps) => {
+}: EventCardProps) => {
   return (
-    <div className="flex h-3/8 w-3/8 flex-col p-8">
-      <p className="font-playfair text-ascend-red-orange border-t-2 border-b-2 border-black pt-6 pb-3 text-center text-4xl font-bold">
+    <div className="flex w-full flex-col">
+      <p className="font-playfair text-ascend-red-orange border-t-2 border-b-2 border-black py-2 text-center text-2xl font-bold md:py-4 md:text-3xl lg:text-4xl xl:text-5xl">
         {title}
       </p>
-      <div className="py-3 text-left text-2xl font-semibold">
+      <div className="text-md py-3 text-left font-semibold md:text-xl lg:text-2xl xl:text-3xl">
         <p>
           {date} | {time}
         </p>
         <p>{location}</p>
       </div>
-      <p className="text-left indent-8 font-thin">{description}</p>
+      <p className="text-left indent-4 text-sm font-thin md:indent-8 lg:text-lg xl:text-xl">
+        {description}
+      </p>
     </div>
   );
 };

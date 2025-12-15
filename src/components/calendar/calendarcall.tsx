@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Calendar as UICalendar } from "@/components/calendar/calendar";
 import { useQuery } from "@tanstack/react-query";
 import Heading from "@/components/Heading";
+import EventCarousel from "./eventcarousel";
 
 export function useWindowWidth() {
   const [width, setWidth] = useState(
@@ -77,9 +78,15 @@ const CalendarCall = () => {
     },
   });
 
+  const carouselEvents = (data?.allEvents ?? []).filter((item) => {
+    const start = item.start?.dateTime ?? item.start?.date;
+    return start && new Date(start) >= new Date();
+  });
+
   return (
     <>
       <Heading title="Upcoming Events" />
+      <EventCarousel calendarEvents={carouselEvents} />
       <UICalendar
         mode="single"
         selected={date}
