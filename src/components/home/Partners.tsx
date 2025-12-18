@@ -1,16 +1,15 @@
 "use client";
 import Carousel from "@/components/Carousel";
 import partners from "@/data/partners";
-import Heading from "../Heading";
 import Image from "next/image";
 import groupPhoto2 from "@/public/home/group2withdots.webp";
 import { motion } from "motion/react";
+import SubHeading from "../SubHeading";
 
 const Partners = () => {
   return (
     <>
-      {/* TODO: Change this to subheading after its done */}
-      <Heading title="Partners" />
+      <SubHeading title="Partners" />
       <Carousel data={partners} />
       <motion.div
         initial={{ opacity: 0.5, scale: 0.5 }}
