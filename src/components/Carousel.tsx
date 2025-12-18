@@ -15,7 +15,7 @@ const Carousel = ({ data }: CarouselProps) => {
   const scrollingItems = [...data, ...data];
 
   return (
-    <div className="relative mt-24 h-40 w-full overflow-hidden md:my-10">
+    <div className="relative my-16 h-40 w-full overflow-hidden md:my-10">
       <motion.div
         className="flex w-max items-center gap-6"
         initial={{ x: 0 }}

@@ -24,7 +24,7 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <div className="col-span-3 flex flex-row justify-between text-4xl max-lg:flex-col max-lg:items-center max-lg:gap-6 max-lg:text-2xl">
+      <div className="col-span-3 flex flex-row justify-center gap-32 text-4xl max-lg:flex-col max-lg:items-center max-lg:gap-6 max-lg:text-2xl">
         <div className="flex flex-col items-center gap-4">
           <Image
             src={connect}

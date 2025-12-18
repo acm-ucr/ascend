@@ -10,7 +10,7 @@ const NotFound = () => {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
-      <div className="flex h-screen w-screen flex-col items-center justify-center">
+      <div className="flex h-screen w-full flex-col items-center justify-center">
         <h1 className="font-playfair text-ascend-red-orange text-8xl lg:text-9xl">
           404
         </h1>
