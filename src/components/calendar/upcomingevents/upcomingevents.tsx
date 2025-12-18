@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import Cards from "./cards";
+import Cards from "@/components/calendar/upcomingevents/cards";
 
 export type GoogleEventProps = {
   start: {
