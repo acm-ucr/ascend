@@ -1,7 +1,7 @@
 const TierCard = () => {
   return (
-    <article className="md:text-xl text-lg my-12 tier-card flex flex-col max-w-3/4 mx-auto items-center rounded-lg border border-black shadow-md">
-      <div className="my-8 flex flex-col items-center w-1/2 rounded-lg border border-black bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-from),var(--tw-gradient-to))] from-ascend-peach to-ascend-peach/10 text-center shadow-md">
+    <article className="md:text-xl text-lg my-12 tier-card flex flex-col md:max-w-3/4 md:mx-auto mx-4 items-center rounded-lg border border-black shadow-md">
+      <div className="my-8 flex flex-col items-center w-full md:w-1/2 md:rounded-lg border border-black bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-from),var(--tw-gradient-to))] from-ascend-peach to-ascend-peach/10 text-center shadow-md">
         <div className="mt-5 inline-block w-5/6 border-b-2">
           <h2 className="font-bold">Tier 1 : ASCEND UCR Membership</h2>
         </div>
