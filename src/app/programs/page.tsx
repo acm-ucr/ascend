@@ -4,7 +4,7 @@ import SubHeading from "@/components/SubHeading";
 
 const Programs = () => {
   return (
-    <div className="mb-20 text-center">
+    <div className="my-20 flex flex-col gap-8 text-center">
       <Heading title="Programs" />
       <p className="mx-auto w-2/3 text-xl">
         In addition to the meetings and events that Ascend UCR participates in,
@@ -13,7 +13,7 @@ const Programs = () => {
         students grow as a professional.
       </p>
       <SubHeading title="Internships" />
-      <div className="mx-auto my-12 flex w-2/3 flex-col gap-8 text-xl">
+      <div className="mx-auto my-4 flex w-2/3 flex-col gap-8 text-xl">
         <p>
           P2A (Path to Ascend), a professional mentorship program designed to
           connect driven students with experienced professionals (Pathway
@@ -33,12 +33,12 @@ const Programs = () => {
           Ascend) is here to support your journey—one conversation at a time.
         </p>
       </div>
-      <p className="font-playfair text-2xl font-bold">
+      <p className="font-playfair mb-12 text-2xl font-bold">
         Coming Soon: Winter 2026
       </p>
       <SubHeading title="P2A (Path to Ascend)" />
       {/* TODO: Change this text */}
-      <div className="mx-auto mt-12 mb-24 flex w-2/3 flex-col gap-8 text-xl">
+      <div className="mx-auto mt-4 mb-24 flex w-2/3 flex-col gap-8 text-xl">
         <p>
           P2A (Path to Ascend), a professional mentorship program designed to
           connect driven students with experienced professionals (Pathway

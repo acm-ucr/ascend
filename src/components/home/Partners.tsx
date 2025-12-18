@@ -8,7 +8,7 @@ import SubHeading from "../SubHeading";
 
 const Partners = () => {
   return (
-    <>
+    <div className="my-12 w-full">
       <SubHeading title="Partners" />
       <Carousel data={partners} />
       <motion.div
@@ -18,9 +18,13 @@ const Partners = () => {
         viewport={{ once: true }}
         className="flex justify-center"
       >
-        <Image src={groupPhoto2} alt="Group Photo 2" className="w-1/2 pb-12" />
+        <Image
+          src={groupPhoto2}
+          alt="Group Photo 2"
+          className="w-4/5 pb-12 md:w-1/2"
+        />
       </motion.div>
-    </>
+    </div>
   );
 };
 
