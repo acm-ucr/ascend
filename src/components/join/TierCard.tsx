@@ -1,7 +1,7 @@
 const TierCard = () => {
   return (
-    <article className="md:text-xl text-lg my-12 tier-card flex flex-col md:max-w-3/4 md:mx-auto mx-4 items-center rounded-lg border border-black shadow-md">
-      <div className="my-8 flex flex-col items-center w-full md:w-1/2 md:rounded-lg border border-black bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-from),var(--tw-gradient-to))] from-ascend-peach to-ascend-peach/10 text-center shadow-md">
+    <article className="tier-card mx-4 my-12 flex flex-col items-center rounded-lg border border-black text-lg shadow-md md:mx-auto md:max-w-3/4 md:text-xl">
+      <div className="from-ascend-peach to-ascend-peach/10 my-8 flex w-full flex-col items-center border border-black bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-from),var(--tw-gradient-to))] text-center shadow-md md:w-1/2 md:rounded-lg">
         <div className="mt-5 inline-block w-5/6 border-b-2">
           <h2 className="font-bold">Tier 1 : ASCEND UCR Membership</h2>
         </div>
@@ -12,8 +12,8 @@ const TierCard = () => {
       </div>
 
       <section className="mb-10 ml-5">
-        <p className="mb-3 font-bold italic text-lg md:text-xl">Benefits:</p>
-        <ol className="ml-5 list-disc md:text-lg text-md">
+        <p className="mb-3 text-lg font-bold italic md:text-xl">Benefits:</p>
+        <ol className="text-md ml-5 list-disc md:text-lg">
           <li>
             <span className="font-bold">General Ascend UCR events</span> (ex.
             workshops, panels, speaker series)
@@ -27,7 +27,9 @@ const TierCard = () => {
           </li>
           <li>
             Qualified to apply to{" "}
-            <span className="font-bold">Path to Ascend (P2A) Mentorship Program</span>
+            <span className="font-bold">
+              Path to Ascend (P2A) Mentorship Program
+            </span>
           </li>
           <li>
             Qualified to apply to{" "}

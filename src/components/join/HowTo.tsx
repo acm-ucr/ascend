@@ -5,7 +5,7 @@ const HowTo = () => {
   return (
     <div className="mb-20 flex flex-col items-center text-center">
       <SubHeading title="How to Join" />
-      <p className="mt-12 mb-4 w-3/4 md:w-1/2 text-xl md:text-2xl">
+      <p className="mt-12 mb-4 w-3/4 text-xl md:w-1/2 md:text-2xl">
         Click below to join Ascend and take the first step toward new
         opportunities, meaningful connections, and becoming part of an inspiring
         community today!

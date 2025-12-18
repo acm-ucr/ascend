@@ -13,30 +13,30 @@ const Cards = () => {
             {title}
           </p>
 
-            <div className="grid w-full max-w-5xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-10">
+          <div className="grid w-full max-w-5xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-10">
             {members.map(
               ({ profilePic, name, position, majorYear, linkedin }, index) => (
-              <div
-                key={index}
-                className={`font-nunito ${
-                members.length % 2 === 1 && index === members.length - 1
-                  ? "md:col-span-2"
-                  : ""
-                }`}
-              >
-                <div className="w-full md:max-w-md md:mx-auto">
-                <BoardCard
-                profilePic={profilePic}
-                name={name}
-                position={position}
-                majorYear={majorYear}
-                linkedin={linkedin}
-                />
+                <div
+                  key={index}
+                  className={`font-nunito ${
+                    members.length % 2 === 1 && index === members.length - 1
+                      ? "md:col-span-2"
+                      : ""
+                  }`}
+                >
+                  <div className="w-full md:mx-auto md:max-w-md">
+                    <BoardCard
+                      profilePic={profilePic}
+                      name={name}
+                      position={position}
+                      majorYear={majorYear}
+                      linkedin={linkedin}
+                    />
+                  </div>
                 </div>
-              </div>
               ),
             )}
-            </div>
+          </div>
         </div>
       ))}
     </div>

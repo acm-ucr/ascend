@@ -1,5 +1,5 @@
-import SubHeading from "../SubHeading"
-import TierCard from "./TierCard"
+import SubHeading from "../SubHeading";
+import TierCard from "./TierCard";
 
 const Member = () => {
   return (
@@ -7,7 +7,7 @@ const Member = () => {
       <SubHeading title="Member Benefits" />
       <TierCard />
     </>
-  )
-}
+  );
+};
 
-export default Member
+export default Member;
