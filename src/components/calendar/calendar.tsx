@@ -6,7 +6,6 @@ import { useState } from "react";
 import { GoogleEventProps } from "../calendar/calendarcall";
 import CalendarDay from "@/components/calendar/month/calendarday";
 import CalendarTop from "@/components/calendar/month/calendartop";
-import UpcomingEvents from "@/components/calendar/upcomingevents/upcomingevents";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker> & {
   events: GoogleEventProps[];
@@ -99,7 +98,6 @@ function Calendar({
         }}
         {...props}
       />
-      <UpcomingEvents />
     </div>
   );
 }
