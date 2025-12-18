@@ -2,7 +2,7 @@
 import Card from "@/components/calendar/upcomingevents/card";
 import { motion } from "motion/react";
 import type { DayPicker } from "react-day-picker";
-import type { GoogleEventProps } from "@/components/calendar/upcomingevents/upcomingevents";
+import type { GoogleEventProps } from "@/components/calendar/upcomingevents/googleeventprops";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker> & {
   events: GoogleEventProps[];

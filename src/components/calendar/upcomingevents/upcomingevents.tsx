@@ -2,20 +2,7 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import Cards from "@/components/calendar/upcomingevents/cards";
-
-export type GoogleEventProps = {
-  start: {
-    dateTime?: string;
-    date?: string;
-  };
-  end: {
-    dateTime?: string;
-    date?: string;
-  };
-  location?: string;
-  description?: string;
-  summary: string;
-};
+import type { GoogleEventProps } from "@/components/calendar/upcomingevents/googleeventprops";
 
 export interface EventCardProps {
   date: string;
