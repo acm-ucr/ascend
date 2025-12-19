@@ -35,59 +35,13 @@ const EventCarousel = ({
         date: formattedDate || "Month Day Year",
         time: formattedTime || "Time",
         location: event.location || "Location",
-        description:
-          event.description ||
-          "     Description description description description description description description description description description description description",
+        description: event.description || " ",
       };
     });
   };
 
-  // Testing without the api
-  const testing: EventCardProps[] = [
-    {
-      title: "Event Title",
-      date: "Month Day Year",
-      time: "Time",
-      location: "Location",
-      description:
-        "Description description description description description description description description description description description description",
-    },
-    {
-      title: "Event Title",
-      date: "Month Day Year",
-      time: "Time",
-      location: "Location",
-      description:
-        "Description description description description description description description description description description description description",
-    },
-    {
-      title: "Event Title",
-      date: "Month Day Year",
-      time: "Time",
-      location: "Location",
-      description:
-        "Description description description description description description description description description description description description",
-    },
-    {
-      title: "Event Title",
-      date: "Month Day Year",
-      time: "Time",
-      location: "Location",
-      description:
-        "Description description description description description description description description description description description description",
-    },
-    {
-      title: "Event Title",
-      date: "Month Day Year",
-      time: "Time",
-      location: "Location",
-      description:
-        "Description description description description description description description description description description description description",
-    },
-  ];
-
   const formattedEvents = eventFormat(calendarEvents);
-  const displayEvents = formattedEvents.length > 0 ? events : testing; // using the testing list of events but it will be replaced with []
+  const displayEvents = formattedEvents.length > 0 ? formattedEvents : events;
   const maxIndex = Math.max(0, displayEvents.length - 2);
   const currentDisplay = displayEvents.slice(currIndex, currIndex + 2);
 
@@ -110,15 +64,15 @@ const EventCarousel = ({
       {currIndex > 0 && (
         <button
           onClick={goBack}
-          className="absolute -bottom-10 left-35 z-10 text-4xl hover:-translate-x-1 active:scale-95 sm:bottom-auto sm:left-5 md:left-[5vw]"
+          className="absolute -bottom-10 left-35 z-10 text-3xl hover:-translate-x-1 active:scale-95 sm:bottom-auto sm:left-[3vw] md:left-[2vw] lg:left-[3vw] lg:text-4xl xl:left-[5vw] xl:text-5xl 2xl:left-[13vw]"
         >
           <LuArrowLeft />
         </button>
       )}
 
-      <div className="flex flex-row items-center justify-center gap-16">
+      <div className="flex flex-row items-center justify-center gap-8">
         {currentDisplay.map((event, index) => (
-          <div key={currIndex + index} className="w-1/3">
+          <div key={currIndex + index} className="w-full">
             <EventCard
               title={event.title}
               date={event.date}
@@ -133,7 +87,7 @@ const EventCarousel = ({
       {currIndex < maxIndex && (
         <button
           onClick={clickNext}
-          className="absolute right-35 -bottom-10 z-10 text-4xl hover:translate-x-1 active:scale-95 sm:right-5 sm:bottom-auto md:right-[5vw]"
+          className="absolute right-35 -bottom-10 z-10 text-3xl hover:translate-x-1 active:scale-95 sm:right-[3vw] sm:bottom-auto md:right-[2vw] lg:right-[3vw] lg:text-4xl xl:right-[5vw] xl:text-5xl 2xl:right-[13vw]"
         >
           <LuArrowRight />
         </button>

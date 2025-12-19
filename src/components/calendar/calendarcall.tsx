@@ -44,6 +44,9 @@ export type CalendarEvent = {
 
 const CalendarCall = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const gmail = encodeURIComponent(
+    process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL!,
+  );
 
   const { data } = useQuery<{
     allEvents: GoogleEventProps[];
@@ -61,8 +64,8 @@ const CalendarCall = () => {
 
       const response = await fetch(
         `https://www.googleapis.com/calendar/v3/calendars/${
-          process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL
-        }/events?key=${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY}&singleEvents=true&orderBy=startTime&timeMin=${tenWeeksAgo}&timeMax=${tenWeeksAhead}`,
+          gmail
+        }/events?key=${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY!}&singleEvents=true&orderBy=startTime&timeMin=${tenWeeksAgo}&timeMax=${tenWeeksAhead}`,
       ).then((res) => res.json());
 
       const allEvents: GoogleEventProps[] = response.items || [];
@@ -78,10 +81,7 @@ const CalendarCall = () => {
     },
   });
 
-  const carouselEvents = (data?.allEvents ?? []).filter((item) => {
-    const start = item.start?.dateTime ?? item.start?.date;
-    return start && new Date(start) >= new Date();
-  });
+  const carouselEvents = data?.allEvents ?? [];
 
   return (
     <>
