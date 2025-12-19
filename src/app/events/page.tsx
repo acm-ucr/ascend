@@ -1,11 +1,11 @@
 import Gallery from "@/components/events/Gallery";
 import SubHeading from "@/components/SubHeading";
-import Heading from "@/components/Heading";
+import PastEvents from "@/components/events/PastEvents";
 
 const Events = () => {
   return (
     <>
-      <Heading title="Past Events" />
+      <PastEvents />
       <SubHeading title="Gallery" />
       <Gallery />
     </>
