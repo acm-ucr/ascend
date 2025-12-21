@@ -3,7 +3,7 @@ import photos from "@/data/photos";
 
 const Gallery = () => {
   return (
-    <div className="lg::p-30 mx-5 grid grid-cols-3 gap-6 p-10 sm:p-15 md:mx-10 md:p-25 lg:mx-15">
+    <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 md:p-8">
       {photos.map((photo, index) => (
         <div
           key={index}
@@ -13,6 +13,7 @@ const Gallery = () => {
             src={photo.image}
             alt={photo.alt}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
             className="object-cover transition-transform hover:scale-105"
           />
         </div>
