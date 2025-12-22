@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export default function Landing() {
   const cardBase =
@@ -21,7 +22,12 @@ export default function Landing() {
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-4 pt-10 md:pt-14 lg:pt-16">
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-4 pt-10 md:pt-14 lg:pt-16"
+      >
         <div
           className={`${cardBase} translate-x-[-10px] translate-y-[150px]`}
           aria-hidden="true"
@@ -36,7 +42,7 @@ export default function Landing() {
             Connect. Inspire. Ascend.
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
