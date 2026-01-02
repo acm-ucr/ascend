@@ -73,8 +73,8 @@ const PastEvents = () => {
               key={tab.id}
               className={`font-playfair flex-1 rounded-t-2xl p-2 font-bold md:rounded-t-4xl md:p-8 md:text-3xl ${
                 activeTab === tab.id
-                  ? "bg-ascend-light-orange"
-                  : "text-ascend-red-orange bg-gray-300"
+                  ? "bg-ascend-light-orange z-20"
+                  : "text-ascend-red-orange z-10 bg-gray-300 transition-all hover:-translate-y-0.5 hover:scale-[103%] hover:cursor-pointer"
               }`}
               onClick={() => setActiveTab(tab.id)}
             >
