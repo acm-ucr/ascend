@@ -1,9 +1,10 @@
 import Heading from "@/components/Heading";
 import Image from "next/image";
+import Ascend from "@/public/home/ascend.webp";
 
 const JoinUs = () => {
   return (
-    <div className="flex flex-col items-center justify-center pt-20">
+    <div className="flex flex-col items-center justify-center">
       <Heading title="Join Us" />
       <p className="text-ascend-dark-blue mt-15 w-2/3 text-center text-2xl">
         Ascend is a national non-profit organization that is advancing Pan-Asian
@@ -12,13 +13,7 @@ const JoinUs = () => {
       </p>
 
       <div className="relative my-15 h-96 w-full">
-        <Image
-          src="/home/ascend.webp"
-          alt="Logo"
-          fill
-          className="object-cover"
-          priority
-        />
+        <Image src={Ascend} alt="Logo" fill className="object-cover" priority />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "motion/react";
+import Ascend from "@/public/home/ascend.webp";
 
 export default function Landing() {
   const cardBase =
@@ -12,7 +13,7 @@ export default function Landing() {
       className="relative isolate flex min-h-[60vh] w-full items-start justify-center overflow-hidden bg-neutral-900 md:min-h-[75vh] lg:min-h-[80vh]"
     >
       <Image
-        src="/home/group-1.webp"
+        src={Ascend}
         alt="Ascend members at an event"
         fill
         priority

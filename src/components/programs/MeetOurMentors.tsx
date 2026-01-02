@@ -8,7 +8,7 @@ const MeetOurMentors = () => {
   const [activeTab, setActiveTab] = useState("Consulting");
 
   return (
-    <div className="m-auto w-76/100">
+    <div className="m-auto w-9/12">
       <div className="font-playfair mb-12 flex justify-center text-3xl font-bold">
         Meet Our Mentors
       </div>
@@ -20,11 +20,11 @@ const MeetOurMentors = () => {
             "Accounting",
             "Tech",
           ];
-          return tabs.map((tab) => (
+          return tabs.map((tab, index) => (
             <button
-              key={tab}
+              key={index}
               onClick={() => setActiveTab(tab)}
-              className={`font-playfair flex w-1/4 min-w-0 justify-center truncate rounded-t-3xl px-2 py-2 text-[15px] font-bold sm:px-6 sm:py-3 sm:text-xl md:text-2xl ${
+              className={`font-playfair flex w-1/4 min-w-0 justify-center truncate rounded-t-3xl px-2 py-2 text-sm font-bold sm:px-6 sm:py-3 sm:text-xl md:text-2xl ${
                 activeTab === tab
                   ? "bg-ascend-light-orange text-black"
                   : "text-ascend-red-orange bg-gray-200"

@@ -13,6 +13,21 @@ import gwmiddle from "@/public/events/growth-week/gw-middle.webp";
 import gwright from "@/public/events/growth-week/gw-right.webp";
 import Heading from "../Heading";
 
+const LeftAnimation = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1.2 } },
+};
+
+const MiddleAnimation = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1.2, delay: 0.4 } },
+};
+
+const RightAnimation = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1.2, delay: 0.8 } },
+};
+
 const PastEvents = () => {
   const [activeTab, setActiveTab] = useState(1);
 
@@ -49,38 +64,38 @@ const PastEvents = () => {
   ];
 
   return (
-    <div className="py-20">
+    <div>
       <Heading title="Past Events" />
       <div className="outline-ascend-light-orange h-full w-full p-8 md:p-16">
         <div className="flex">
-          {tabs.map(({ id, title }) => (
+          {tabs.map((tab) => (
             <button
-              key={id}
+              key={tab.id}
               className={`font-playfair flex-1 rounded-t-2xl p-2 font-bold md:rounded-t-4xl md:p-8 md:text-3xl ${
-                activeTab === id
+                activeTab === tab.id
                   ? "bg-ascend-light-orange"
                   : "text-ascend-red-orange bg-gray-300"
               }`}
-              onClick={() => setActiveTab(id)}
+              onClick={() => setActiveTab(tab.id)}
             >
-              {title}
+              {tab.title}
             </button>
           ))}
         </div>
         <div className="font-nunito border-ascend-light-orange border-2 p-6 text-center md:p-10 md:text-xl">
           {tabs.map(
-            ({ id, content }) =>
-              activeTab === id && (
-                <div key={id} className="space-y-8">
-                  {content.split("\n").map((paragraph, idx) => (
+            (tab) =>
+              activeTab === tab.id && (
+                <div key={tab.id} className="space-y-8">
+                  {tab.content.split("\n").map((paragraph, idx) => (
                     <p key={idx}>{paragraph.trim()}</p>
                   ))}
                   {activeTab === 1 && (
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2 }}
+                        variants={LeftAnimation}
+                        initial="hidden"
+                        whileInView="visible"
                         className="relative hidden h-64 w-full overflow-hidden rounded-lg md:block"
                       >
                         <Image
@@ -91,9 +106,9 @@ const PastEvents = () => {
                         />
                       </motion.div>
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2, delay: 0.4 }}
+                        variants={MiddleAnimation}
+                        initial="hidden"
+                        whileInView="visible"
                         className="relative hidden h-64 w-full overflow-hidden rounded-lg md:block"
                       >
                         <Image
@@ -104,9 +119,9 @@ const PastEvents = () => {
                         />
                       </motion.div>
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2, delay: 0.8 }}
+                        variants={RightAnimation}
+                        initial="hidden"
+                        whileInView="visible"
                         className="relative h-64 w-full overflow-hidden rounded-lg"
                       >
                         <Image
@@ -121,9 +136,9 @@ const PastEvents = () => {
                   {activeTab === 2 && (
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2 }}
+                        variants={LeftAnimation}
+                        initial="hidden"
+                        whileInView="visible"
                         className="relative h-64 w-full overflow-hidden rounded-lg"
                       >
                         <Image
@@ -134,9 +149,9 @@ const PastEvents = () => {
                         />
                       </motion.div>
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2, delay: 0.4 }}
+                        variants={MiddleAnimation}
+                        initial="hidden"
+                        whileInView="visible"
                         className="relative hidden h-64 w-full overflow-hidden rounded-lg md:block"
                       >
                         <Image
@@ -147,9 +162,9 @@ const PastEvents = () => {
                         />
                       </motion.div>
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2, delay: 0.8 }}
+                        variants={RightAnimation}
+                        initial="hidden"
+                        whileInView="visible"
                         className="relative hidden h-64 w-full overflow-hidden rounded-lg md:block"
                       >
                         <Image
@@ -164,9 +179,9 @@ const PastEvents = () => {
                   {activeTab === 3 && (
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2 }}
+                        variants={LeftAnimation}
+                        initial="hidden"
+                        whileInView="visible"
                         className="relative h-64 w-full overflow-hidden rounded-lg"
                       >
                         <Image
@@ -177,9 +192,9 @@ const PastEvents = () => {
                         />
                       </motion.div>
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2, delay: 0.4 }}
+                        variants={MiddleAnimation}
+                        initial="hidden"
+                        whileInView="visible"
                         className="relative hidden h-64 w-full overflow-hidden rounded-lg md:block"
                       >
                         <Image
@@ -190,9 +205,9 @@ const PastEvents = () => {
                         />
                       </motion.div>
                       <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2, delay: 0.8 }}
+                        variants={RightAnimation}
+                        initial="hidden"
+                        whileInView="visible"
                         className="relative hidden h-64 w-full overflow-hidden rounded-lg md:block"
                       >
                         <Image

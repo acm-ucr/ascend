@@ -6,7 +6,7 @@ interface HeadingProps {
 
 const Heading = ({ title }: HeadingProps) => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="my-8 mt-20 flex items-center justify-center">
       <div className="mb-4 flex flex-col gap-2 md:mb-8 md:gap-4 lg:mb-12 xl:mb-16">
         <div className="flex gap-2 md:gap-4">
           <span className={dot} />
