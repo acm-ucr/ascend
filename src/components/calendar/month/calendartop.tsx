@@ -29,14 +29,14 @@ const CalendarTop = ({
   return (
     <div className="font-nunito mx-auto flex w-10/12 flex-col md:flex-row">
       <div className="items-enter flex w-full pb-6 md:pb-0">
-        <p className="text-ascend-dark-blue font-playfair text-4xl font-bold">
+        <p className="text-ascend-dark-blue font-playfair w-full text-center text-4xl font-bold md:text-left">
           Calendar
         </p>
       </div>
-      <div className="ml-auto flex w-full items-center justify-end pb-6 text-gray-700 md:space-x-4 md:pb-0">
+      <div className="ml-auto flex w-full items-center justify-between pb-6 text-gray-700 md:justify-end md:space-x-4 md:pb-0">
         <button
           onClick={onPrevMonth}
-          className="text-2xl transition hover:-translate-x-1 md:text-4xl"
+          className="text-4xl transition hover:-translate-x-1"
         >
           <LuArrowLeft className="text-ascend-red-orange" />
         </button>
@@ -45,7 +45,7 @@ const CalendarTop = ({
         </span>
         <button
           onClick={onNextMonth}
-          className="text-2xl transition hover:translate-x-1 md:text-4xl"
+          className="text-4xl transition hover:translate-x-1"
         >
           <LuArrowRight className="text-ascend-red-orange" />
         </button>

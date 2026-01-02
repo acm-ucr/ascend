@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Calendar as UICalendar } from "@/components/calendar/calendar";
 import { useQuery } from "@tanstack/react-query";
 import Heading from "@/components/Heading";
-import EventCarousel from "./eventcarousel";
+import EventCarousel from "./EventCarousel";
 
 export function useWindowWidth() {
   const [width, setWidth] = useState(

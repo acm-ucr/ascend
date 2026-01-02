@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import EventCard, { type EventCardProps } from "../events/EventCard";
+import { useState, useEffect } from "react";
+import EventCard, { type EventCardProps } from "./EventCard";
 import { LuArrowRight, LuArrowLeft } from "react-icons/lu";
 import type { GoogleEventProps } from "./calendarcall";
 
@@ -14,6 +14,17 @@ const EventCarousel = ({
   calendarEvents = [],
 }: EventCarouselProps) => {
   const [currIndex, setCurrIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const eventFormat = (googleEvents: GoogleEventProps[]): EventCardProps[] => {
     return googleEvents.map((event) => {
@@ -42,8 +53,12 @@ const EventCarousel = ({
 
   const formattedEvents = eventFormat(calendarEvents);
   const displayEvents = formattedEvents.length > 0 ? formattedEvents : events;
-  const maxIndex = Math.max(0, displayEvents.length - 2);
-  const currentDisplay = displayEvents.slice(currIndex, currIndex + 2);
+  const cardsPerPage = isMobile ? 1 : 2;
+  const maxIndex = Math.max(0, displayEvents.length - cardsPerPage);
+  const currentDisplay = displayEvents.slice(
+    currIndex,
+    currIndex + cardsPerPage,
+  );
 
   if (displayEvents.length === 0) {
     return (
@@ -51,47 +66,61 @@ const EventCarousel = ({
     );
   }
 
-  const goBack = () => {
-    setCurrIndex((prev) => Math.max(0, prev - 2));
+  const clickBack = () => {
+    setCurrIndex((prev) => Math.max(0, prev - cardsPerPage));
   };
 
   const clickNext = () => {
-    setCurrIndex((prev) => Math.min(maxIndex, prev + 2));
+    setCurrIndex((prev) => Math.min(maxIndex, prev + cardsPerPage));
   };
 
   return (
-    <div className="relative mb-16 flex items-center justify-center">
-      {currIndex > 0 && (
-        <button
-          onClick={goBack}
-          className="absolute -bottom-10 left-35 z-10 text-3xl hover:-translate-x-1 active:scale-95 sm:bottom-auto sm:left-[3vw] md:left-[2vw] lg:left-[3vw] lg:text-4xl xl:left-[5vw] xl:text-5xl 2xl:left-[13vw]"
-        >
-          <LuArrowLeft />
-        </button>
-      )}
+    <div className="mb-16 flex w-full flex-col md:flex-row md:items-center md:justify-center md:gap-20">
+      <button
+        onClick={clickBack}
+        disabled={currIndex === 0}
+        className="hidden text-4xl hover:-translate-x-1 active:scale-95 disabled:opacity-40 disabled:hover:-translate-x-0 disabled:active:scale-100 md:ml-20 md:block"
+      >
+        <LuArrowLeft />
+      </button>
 
-      <div className="flex flex-row items-center justify-center gap-8">
+      <div className="mx-auto flex w-full flex-row items-center justify-center gap-16">
         {currentDisplay.map((event, index) => (
-          <div key={currIndex + index} className="w-full">
-            <EventCard
-              title={event.title}
-              date={event.date}
-              time={event.time}
-              location={event.location}
-              description={event.description}
-            />
-          </div>
+          <EventCard
+            title={event.title}
+            date={event.date}
+            time={event.time}
+            location={event.location}
+            description={event.description}
+            key={currIndex + index}
+          />
         ))}
       </div>
 
-      {currIndex < maxIndex && (
+      <button
+        onClick={clickNext}
+        disabled={currIndex >= maxIndex}
+        className="hidden text-4xl hover:translate-x-1 active:scale-95 disabled:opacity-40 disabled:hover:translate-x-0 disabled:active:scale-100 md:mr-20 md:block"
+      >
+        <LuArrowRight />
+      </button>
+
+      <div className="mt-2 flex w-full items-center justify-center gap-8 md:hidden">
+        <button
+          onClick={clickBack}
+          disabled={currIndex === 0}
+          className="text-4xl hover:-translate-x-1 active:scale-95 disabled:opacity-40 disabled:hover:-translate-x-0 disabled:active:scale-100"
+        >
+          <LuArrowLeft />
+        </button>
         <button
           onClick={clickNext}
-          className="absolute right-35 -bottom-10 z-10 text-3xl hover:translate-x-1 active:scale-95 sm:right-[3vw] sm:bottom-auto md:right-[2vw] lg:right-[3vw] lg:text-4xl xl:right-[5vw] xl:text-5xl 2xl:right-[13vw]"
+          disabled={currIndex >= maxIndex}
+          className="text-4xl hover:translate-x-1 active:scale-95 disabled:opacity-40 disabled:hover:translate-x-0 disabled:active:scale-100"
         >
           <LuArrowRight />
         </button>
-      )}
+      </div>
     </div>
   );
 };
