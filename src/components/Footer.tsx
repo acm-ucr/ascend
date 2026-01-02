@@ -32,7 +32,7 @@ const Footer = () => {
             href="https://linktr.ee/AscendUCR"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:opacity-70" //ADDED HOVER
+            className="transition hover:opacity-70"
           >
             <SiLinktree size={35} />
           </Link>
@@ -41,7 +41,7 @@ const Footer = () => {
             href="https://www.linkedin.com/company/ascenducr-25"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:opacity-70" //ADDED HOVER
+            className="transition hover:opacity-70"
           >
             <FiLinkedin size={40} />
           </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
             href="https://www.instagram.com/ascend_ucr/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:opacity-70" //ADDED HOVER
+            className="transition hover:opacity-70"
           >
             <FaInstagram size={40} />
           </Link>

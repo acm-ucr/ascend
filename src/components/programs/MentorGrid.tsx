@@ -34,7 +34,7 @@ const MentorGrid = ({ data }: { data: Mentor[] }) => {
               href={mentor.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-[#0b143c] px-6 py-1 text-white underline"
+              className="rounded-full bg-[#0b143c] px-6 py-1 text-white hover:underline"
             >
               Linkedin
             </Link>

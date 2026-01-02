@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import logo from "@/public/logo.webp";
 
 const LINKS = [
   { href: "/", label: "Home" },
@@ -24,13 +25,7 @@ const NavBar = () => {
           href="/"
           className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0"
         >
-          <Image
-            src="/logo.webp"
-            alt="Logo"
-            width={150}
-            height={100}
-            priority
-          />
+          <Image src={logo} alt="Logo" width={150} height={100} priority />
         </Link>
 
         <button

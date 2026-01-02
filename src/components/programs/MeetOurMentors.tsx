@@ -8,7 +8,7 @@ const MeetOurMentors = () => {
   const [activeTab, setActiveTab] = useState("Consulting");
 
   return (
-    <div className="m-auto w-9/12">
+    <div className="m-auto mb-20 w-3/4">
       <div className="font-playfair mb-12 flex justify-center text-3xl font-bold">
         Meet Our Mentors
       </div>
@@ -26,8 +26,8 @@ const MeetOurMentors = () => {
               onClick={() => setActiveTab(tab)}
               className={`font-playfair flex w-1/4 min-w-0 justify-center truncate rounded-t-3xl px-2 py-2 text-sm font-bold sm:px-6 sm:py-3 sm:text-xl md:text-2xl ${
                 activeTab === tab
-                  ? "bg-ascend-light-orange text-black"
-                  : "text-ascend-red-orange bg-gray-200"
+                  ? "bg-ascend-light-orange z-20 text-black"
+                  : "text-ascend-red-orange z-10 bg-gray-200 transition-all hover:-translate-y-0.5 hover:scale-105 hover:cursor-pointer"
               } `}
             >
               {tab}
