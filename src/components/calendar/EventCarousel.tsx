@@ -62,7 +62,9 @@ const EventCarousel = ({
 
   if (displayEvents.length === 0) {
     return (
-      <div className="text-center text-xl">There are no upcoming events.</div>
+      <div className="my-20 text-center text-xl">
+        There are no upcoming events.
+      </div>
     );
   }
 

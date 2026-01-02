@@ -1,6 +1,13 @@
+"use client";
+import { motion } from "motion/react";
 import Heading from "@/components/Heading";
 import Image from "next/image";
 import Ascend from "@/public/home/ascend.webp";
+
+const ImageAnimation = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+};
 
 const JoinUs = () => {
   return (
@@ -12,9 +19,15 @@ const JoinUs = () => {
         who are passionate about leadership, growth, and community.
       </p>
 
-      <div className="relative my-15 h-96 w-full">
+      <motion.div
+        variants={ImageAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="relative my-15 h-96 w-full"
+      >
         <Image src={Ascend} alt="Logo" fill className="object-cover" priority />
-      </div>
+      </motion.div>
     </div>
   );
 };

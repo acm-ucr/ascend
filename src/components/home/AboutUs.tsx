@@ -1,14 +1,32 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 import connect from "@/public/home/connect.webp";
 import inspire from "@/public/home/inspire.webp";
 import ascend from "@/public/home/ascend.webp";
 import Heading from "../Heading";
 
+const ConnectAnimation = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+};
+
+const InspireAnimation = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.6, delay: 0.2 } },
+};
+
+const AscendAnimation = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.6, delay: 0.4 } },
+};
+
 const AboutUs = () => {
   return (
     <div className="font-nunito mx-auto flex w-4/5 flex-col gap-8 text-lg md:text-2xl">
       <Heading title="About Us" />
-      <div className="mx-8 my-4 flex flex-col gap-8 text-center md:my-12 md:text-left md:indent-12">
+      <div className="mx-8 mb-4 flex flex-col gap-8 text-center md:mb-12 md:text-left md:indent-12">
         <p>
           Ascend UCR is a one of the student-led chapters of Ascend Leadership,
           the largest non-profit membership organizations advancing Pan-Asian
@@ -25,26 +43,44 @@ const AboutUs = () => {
       </div>
 
       <div className="col-span-3 flex flex-row justify-center gap-32 text-4xl max-lg:flex-col max-lg:items-center max-lg:gap-6 max-lg:text-2xl">
-        <div className="flex flex-col items-center gap-4">
+        <motion.div
+          variants={ConnectAnimation}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col items-center gap-4"
+        >
           <Image
             src={connect}
             alt="Connect"
             className="h-64 w-64 object-cover"
           />
           <p className="text-ascend-dark-blue">Connect</p>
-        </div>
-        <div className="flex flex-col items-center gap-4">
+        </motion.div>
+        <motion.div
+          variants={InspireAnimation}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col items-center gap-4"
+        >
           <Image
             src={inspire}
             alt="Inspire"
             className="h-64 w-64 object-cover"
           />
           <p className="text-ascend-dark-blue">Inspire</p>
-        </div>
-        <div className="flex flex-col items-center gap-4">
+        </motion.div>
+        <motion.div
+          variants={AscendAnimation}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col items-center gap-4"
+        >
           <Image src={ascend} alt="Ascend" className="h-64 w-64 object-cover" />
           <p className="text-ascend-dark-blue">Ascend</p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
