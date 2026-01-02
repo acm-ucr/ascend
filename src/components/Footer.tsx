@@ -20,19 +20,19 @@ const Footer = () => {
       <div className="order-1 flex flex-col items-center text-center md:order-none md:items-start md:text-left">
         <div className="font-playfair text-3xl font-bold">Contact Us</div>
 
-        <a
+        <Link
           href="mailto:ascenducr@gmail.com"
           className="mt-1 hidden underline decoration-1 md:block"
         >
           ascenducr@gmail.com
-        </a>
+        </Link>
 
         <div className="mt-4 flex items-center gap-8">
           <Link
             href="https://linktr.ee/AscendUCR"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:opacity-70" //ADDED HOVER
+            className="transition hover:opacity-70"
           >
             <SiLinktree size={35} />
           </Link>
@@ -41,7 +41,7 @@ const Footer = () => {
             href="https://www.linkedin.com/company/ascenducr-25"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:opacity-70" //ADDED HOVER
+            className="transition hover:opacity-70"
           >
             <FiLinkedin size={40} />
           </Link>
@@ -50,17 +50,17 @@ const Footer = () => {
             href="https://www.instagram.com/ascend_ucr/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:opacity-70" //ADDED HOVER
+            className="transition hover:opacity-70"
           >
             <FaInstagram size={40} />
           </Link>
 
-          <a
+          <Link
             href="mailto:ascenducr@gmail.com"
             className="block transition hover:opacity-70 md:hidden"
           >
             <FiMail size={40} />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

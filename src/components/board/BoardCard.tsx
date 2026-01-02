@@ -33,7 +33,7 @@ const BoardCard = ({
       <div className="-translate-y-20">
         <p className="py-4 text-xl">{majorYear}</p>
         <Link href={linkedin} target="_blank">
-          <p className="text-l bg-ascend-dark-blue justify-self-center rounded-full px-6 py-1 text-white underline underline-offset-2">
+          <p className="text-l bg-ascend-dark-blue justify-self-center rounded-full px-6 py-1 text-white hover:underline hover:underline-offset-2">
             {"LinkedIn"}
           </p>
         </Link>
