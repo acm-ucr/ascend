@@ -11,6 +11,15 @@ type Mentor = {
 const MentorGrid = ({ data }: { data: Mentor[] }) => {
   const selected = data || [];
 
+  if (selected.length === 0) {
+    return (
+      <div className="text-center text-lg text-gray-600">
+        <p>We don't currently have mentor data available.</p>
+        <p>Please check back soon as we update this section!</p>
+      </div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-2 gap-10 md:grid-cols-3">
       {selected.map((mentor, idx) => (

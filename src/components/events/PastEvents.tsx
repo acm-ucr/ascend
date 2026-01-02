@@ -15,17 +15,17 @@ import Heading from "../Heading";
 
 const LeftAnimation = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1.2 } },
+  visible: { opacity: 1, transition: { duration: 0.8 } },
 };
 
 const MiddleAnimation = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1.2, delay: 0.4 } },
+  visible: { opacity: 1, transition: { duration: 0.8, delay: 0.4 } },
 };
 
 const RightAnimation = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1.2, delay: 0.8 } },
+  visible: { opacity: 1, transition: { duration: 0.8, delay: 0.8 } },
 };
 
 const tabs = [
@@ -96,6 +96,7 @@ const PastEvents = () => {
                         variants={LeftAnimation}
                         initial="hidden"
                         whileInView="visible"
+                        viewport={{ once: true }}
                         className="relative hidden h-64 w-full overflow-hidden rounded-lg md:block"
                       >
                         <Image
@@ -109,6 +110,7 @@ const PastEvents = () => {
                         variants={MiddleAnimation}
                         initial="hidden"
                         whileInView="visible"
+                        viewport={{ once: true }}
                         className="relative hidden h-64 w-full overflow-hidden rounded-lg md:block"
                       >
                         <Image
@@ -122,6 +124,7 @@ const PastEvents = () => {
                         variants={RightAnimation}
                         initial="hidden"
                         whileInView="visible"
+                        viewport={{ once: true }}
                         className="relative h-64 w-full overflow-hidden rounded-lg"
                       >
                         <Image
