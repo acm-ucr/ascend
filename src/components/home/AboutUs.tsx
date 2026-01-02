@@ -6,7 +6,7 @@ import Heading from "../Heading";
 
 const AboutUs = () => {
   return (
-    <div className="font-nunito m-8 mx-auto mt-16 flex w-4/5 flex-col gap-8 text-lg md:text-2xl">
+    <div className="font-nunito mx-auto flex w-4/5 flex-col gap-8 text-lg md:text-2xl">
       <Heading title="About Us" />
       <div className="mx-8 my-4 flex flex-col gap-8 text-center md:my-12 md:text-left md:indent-12">
         <p>

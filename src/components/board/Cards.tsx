@@ -15,11 +15,11 @@ const Cards = () => {
 
           <div className="grid w-full max-w-5xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-10">
             {members.map(
-              ({ profilePic, name, position, majorYear, linkedin }, index) => (
+              ({ profilePic, name, position, majorYear, linkedin }, idx) => (
                 <div
-                  key={index}
+                  key={idx}
                   className={`font-nunito ${
-                    members.length % 2 === 1 && index === members.length - 1
+                    members.length % 2 === 1 && idx === members.length - 1
                       ? "md:col-span-2"
                       : ""
                   }`}

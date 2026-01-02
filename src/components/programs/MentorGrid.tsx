@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type Mentor = {
   name: string;
@@ -29,14 +30,14 @@ const MentorGrid = ({ data }: { data: Mentor[] }) => {
           <p className="text-sm text-gray-600">{mentor.major}</p>
 
           {mentor.linkedin ? (
-            <a
+            <Link
               href={mentor.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-[#0b143c] px-6 py-1 text-white underline"
+              className="rounded-full bg-[#0b143c] px-6 py-1 text-white hover:underline"
             >
               Linkedin
-            </a>
+            </Link>
           ) : (
             <button
               className="rounded-full bg-gray-300 px-6 py-1 text-gray-700"

@@ -3,8 +3,17 @@ import Carousel from "@/components/Carousel";
 import partners from "@/data/partners";
 import Image from "next/image";
 import groupPhoto2 from "@/public/home/group2withdots.webp";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import SubHeading from "../SubHeading";
+
+const PartnersAnimation: Variants = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: "spring", duration: 1, bounce: 0.2 },
+  },
+};
 
 const Partners = () => {
   return (
@@ -12,9 +21,9 @@ const Partners = () => {
       <SubHeading title="Partners" />
       <Carousel data={partners} />
       <motion.div
-        initial={{ opacity: 0.5, scale: 0.5 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ type: "spring", duration: 1, bounce: 0.2 }}
+        variants={PartnersAnimation}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
         className="flex justify-center"
       >
