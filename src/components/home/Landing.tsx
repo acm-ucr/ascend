@@ -3,6 +3,16 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import Ascend from "@/public/home/ascend.webp";
 
+const BackgroundAnimation = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+};
+
+const HeroAnimation = {
+  hidden: { opacity: 0, y: -100 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+};
+
 export default function Landing() {
   const cardBase =
     "relative w-full max-w-lg h-[140px] px-8 py-5 md:px-10 md:py-6 text-center shadow-xl ring-1 ring-black/10 bg-white/40";
@@ -12,21 +22,28 @@ export default function Landing() {
       aria-label="Ascend landing hero"
       className="relative isolate flex min-h-[60vh] w-full items-start justify-center overflow-hidden bg-neutral-900 md:min-h-[75vh] lg:min-h-[80vh]"
     >
-      <Image
-        src={Ascend}
-        alt="Ascend members at an event"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+      <motion.div
+        variants={BackgroundAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <Image
+          src={Ascend}
+          alt="Ascend members at an event"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </motion.div>
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30" />
 
       <motion.div
-        initial={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        variants={HeroAnimation}
+        initial="hidden"
+        whileInView="visible"
         className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-4 pt-10 md:pt-14 lg:pt-16"
       >
         <div

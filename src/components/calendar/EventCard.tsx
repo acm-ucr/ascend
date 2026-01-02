@@ -8,6 +8,11 @@ export interface EventCardProps {
   description: string;
 }
 
+const EventCardAnimation = {
+  hidden: { opacity: 0, y: 5 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const EventCard = ({
   title,
   date,
@@ -17,9 +22,9 @@ const EventCard = ({
 }: EventCardProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 5 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      variants={EventCardAnimation}
+      initial="hidden"
+      whileInView="visible"
       className="-mx-12 flex h-80 w-xs flex-col px-8 md:w-lg"
     >
       <p className="font-playfair text-ascend-red-orange line-clamp-2 h-20 border-t-2 border-b-2 border-black py-2 text-center text-xl/8 font-bold md:py-4 md:text-3xl/12">

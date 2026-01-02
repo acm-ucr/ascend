@@ -1,5 +1,8 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 interface BoardProps {
   profilePic: StaticImageData;
@@ -9,6 +12,11 @@ interface BoardProps {
   linkedin: string;
 }
 
+const BoardCardAnimation = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+};
+
 const BoardCard = ({
   profilePic,
   name,
@@ -17,7 +25,13 @@ const BoardCard = ({
   linkedin,
 }: BoardProps) => {
   return (
-    <div className="font-nunito relative flex flex-col items-center">
+    <motion.div
+      variants={BoardCardAnimation}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="font-nunito relative flex flex-col items-center"
+    >
       <div className="relative aspect-square w-full">
         <Image
           src={profilePic}
@@ -38,7 +52,7 @@ const BoardCard = ({
           </p>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

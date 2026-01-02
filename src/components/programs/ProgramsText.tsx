@@ -13,6 +13,8 @@ const ProgramsText = () => {
       </p>
       <SubHeading title="Internships" />
       <div className="mx-auto my-4 flex w-2/3 flex-col gap-8 text-xl">
+        {/* 
+        TODO: Replace this text when Ascend provides it
         <p>
           P2A (Path to Ascend), a professional mentorship program designed to
           connect driven students with experienced professionals (Pathway
@@ -30,13 +32,12 @@ const ProgramsText = () => {
           Whether you're looking to break into your industry, refine your career
           goals, or build a lasting professional relationship, P2A (Path to
           Ascend) is here to support your journey—one conversation at a time.
-        </p>
+        </p> */}
       </div>
       <p className="font-playfair mb-12 text-2xl font-bold">
         Coming Soon: Winter 2026
       </p>
       <SubHeading title="P2A (Path to Ascend)" />
-      {/* TODO: Change this text */}
       <div className="mx-auto mt-4 mb-24 flex w-2/3 flex-col gap-8 text-xl">
         <p>
           P2A (Path to Ascend), a professional mentorship program designed to
